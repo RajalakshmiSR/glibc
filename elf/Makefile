@@ -463,8 +463,6 @@ tests += \
   tst-tls-ie \
   tst-tls-ie-dlmopen \
   tst-tls-manydynamic \
-  tst-unique1 \
-  tst-unique2 \
   tst-unwind-ctor \
   tst-unwind-main \
   unload3 \
@@ -475,6 +473,12 @@ tests += \
   unload8 \
   valgrind-test \
   # tests
+ifeq (yes,$(config-gnu-unique-object))
+tests += \
+  tst-unique1 \
+  tst-unique2 \
+  # tests
+endif
 tests-cxx = \
   tst-dlopen-nodelete-reloc \
   tst-nodelete \
@@ -910,10 +914,6 @@ modules-names += \
   tst-tlsmod7 \
   tst-tlsmod8 \
   tst-tlsmod9 \
-  tst-unique1mod1 \
-  tst-unique1mod2 \
-  tst-unique2mod1 \
-  tst-unique2mod2 \
   tst-unwind-ctor-lib \
   unload2dep \
   unload2mod \
@@ -939,6 +939,14 @@ modules-names += \
   vismod2 \
   vismod3 \
 # modules-names
+ifeq (yes,$(config-gnu-unique-object))
+modules-names += \
+  tst-unique1mod1 \
+  tst-unique1mod2 \
+  tst-unique2mod1 \
+  tst-unique2mod2 \
+# modules-names
+endif
 
 modules-names-cxx = \
   tst-dlopen-nodelete-reloc-mod1 \
