@@ -1,4 +1,7 @@
 ifeq ($(subdir),math)
+
+CFLAGS-s_sincos.c += $(config-cflags-wno-ignored-attributes)
+
 libm-sysdep_routines += s_floor-c s_ceil-c s_floorf-c s_ceilf-c \
 			s_rint-c s_rintf-c s_nearbyint-c s_nearbyintf-c \
 			s_roundeven-c s_roundevenf-c s_trunc-c s_truncf-c
